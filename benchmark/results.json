@@ -1,0 +1,12 @@
+{
+  "benchmark": "deterministic-synthetic-v1",
+  "sample_count": 600,
+  "languages": 3,
+  "intent_accuracy": 0.9,
+  "economy_route_rate": 0.7917,
+  "high_risk_premium_recall": 1.0,
+  "baseline_cost_usd": 1.26,
+  "routed_cost_usd": 0.861,
+  "modeled_cost_reduction": 0.3167,
+  "price_note": "Modeled fixed prices; not current vendor quotes"
+}

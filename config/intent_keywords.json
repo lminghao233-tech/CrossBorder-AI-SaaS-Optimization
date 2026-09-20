@@ -1,0 +1,29 @@
+{
+  "intents": {
+    "logistics": {
+      "risk": "routine",
+      "keywords": ["parcel", "tracking", "shipment", "物流", "快递", "包裹", "배송", "택배"]
+    },
+    "account": {
+      "risk": "routine",
+      "keywords": ["password", "login", "account", "密码", "登录", "账户", "비밀번호", "로그인"]
+    },
+    "product": {
+      "risk": "routine",
+      "keywords": ["size", "color", "stock", "尺码", "颜色", "库存", "사이즈", "색상"]
+    },
+    "refund": {
+      "risk": "routine",
+      "keywords": ["refund status", "return label", "退款进度", "退货标签", "환불 상태", "반품 라벨"]
+    },
+    "legal_dispute": {
+      "risk": "high",
+      "keywords": ["lawsuit", "contract breach", "legal dispute", "诉讼", "合同违约", "法律纠纷", "소송", "계약 위반"]
+    },
+    "tax_compliance": {
+      "risk": "high",
+      "keywords": ["vat audit", "tax compliance", "customs penalty", "增值税审计", "税务合规", "海关处罚", "부가세 감사", "세무 준수"]
+    }
+  }
+}
+

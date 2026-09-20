@@ -1,0 +1,20 @@
+[project]
+name = "crossborder-cost-router"
+version = "0.1.0"
+description = "Reproducible multilingual cost and risk routing demo for cross-border support"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["coverage>=7.6,<8"]
+
+[project.scripts]
+cost-router = "core.cost_router:main"
+cost-router-benchmark = "core.benchmark:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["core*"]
