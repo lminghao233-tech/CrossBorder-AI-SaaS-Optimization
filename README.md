@@ -1,13 +1,17 @@
 # CrossBorder AI Support Agent
 
+[![CI](https://github.com/lminghao233-tech/CrossBorder-AI-SaaS-Optimization/actions/workflows/ci.yml/badge.svg)](https://github.com/lminghao233-tech/CrossBorder-AI-SaaS-Optimization/actions/workflows/ci.yml)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A production-shaped, multilingual AI support workflow that combines **agent
 orchestration, hybrid RAG, model routing, tool calling, guardrails and
 evaluation**. It handles routine logistics/account/refund questions while
 forcing legal, tax and high-value cases into an auditable human-review path.
 
-The repository is intentionally portfolio-safe: all tickets, tools and results
-are deterministic simulations. It contains no customer records, credentials or
-claims of production deployment.
+The default workflow is deterministic and runs without an API key. Live model
+and embedding providers are optional adapters, so routing, retrieval and safety
+behavior remain reproducible in CI.
 
 ## Why this is more than a chatbot
 
@@ -69,6 +73,22 @@ support-agent --text "This contract breach may become a lawsuit" --amount-usd 25
 The JSON result includes route, model tier, citations, retrieval scores,
 guardrail flags and every local tool decision.
 
+<details>
+<summary>Example decision</summary>
+
+```json
+{
+  "intent": "legal_dispute",
+  "route": "premium",
+  "action": "human-review",
+  "require_human_review": true,
+  "grounded": true,
+  "citations": ["KB-LEGAL-001", "KB-SAFETY-001"]
+}
+```
+
+</details>
+
 Start the API:
 
 ```bash
@@ -128,7 +148,7 @@ core/api.py                FastAPI service
 core/agent_eval.py         Retrieval/grounding/safety evaluation
 core/cost_router.py        Risk-first model routing
 knowledge/articles.json    Versioned multilingual knowledge base
-benchmark/                 Synthetic datasets and committed eval results
+benchmark/                 Committed evaluation results
 tests/                     Unit, API, retrieval and safety tests
 ```
 
@@ -150,10 +170,8 @@ tests/                     Unit, API, retrieval and safety tests
 
 - [Architecture and trust boundary](docs/architecture.md)
 - [Benchmark methodology](docs/benchmark-methodology.md)
-- [Interview evidence and claim boundaries](docs/interview-evidence.md)
-- [Resume wording and interview pitch](docs/resume-and-interview.md)
 
-## Production gaps
+## Production roadmap
 
 Before production use, add tenant identity/RBAC, durable queues, a real order
 adapter with least-privilege credentials, rate limits, provider retries and
@@ -163,7 +181,7 @@ testing.
 
 ## Author
 
-Liu Minghao — AI application and solution engineering portfolio
+Liu Minghao — AI/LLM application and platform engineering
 GitHub: [@lminghao233-tech](https://github.com/lminghao233-tech)
 
 ## License

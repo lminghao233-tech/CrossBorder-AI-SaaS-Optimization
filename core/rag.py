@@ -1,4 +1,4 @@
-"""Small, auditable hybrid-RAG implementation for the portfolio service.
+"""Small, auditable hybrid-RAG implementation for the support service.
 
 The default dense encoder is an offline hashing baseline so tests never need a
 network or an API key. ``OpenAIEmbeddingProvider`` can be injected for live

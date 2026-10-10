@@ -1,4 +1,4 @@
-"""Transparent multilingual intent classification for the portfolio demo."""
+"""Transparent multilingual intent classification for the reference service."""
 
 from __future__ import annotations
 
