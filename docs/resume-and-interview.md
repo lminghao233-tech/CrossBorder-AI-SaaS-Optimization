@@ -2,31 +2,30 @@
 
 ## Resume-ready wording
 
-**CrossBorder AI Cost & Risk Router | Portfolio reconstruction**
+**CrossBorder AI Support Agent | Python, FastAPI, Hybrid RAG, Agents SDK**
 
-- Built a Python multilingual routing prototype that classifies Chinese,
-  English and Korean support requests, masks common PII and applies risk-first
-  policy for economy/premium model tiers.
-- Created a deterministic 600-record synthetic benchmark. It reproduced 90.00%
-  intent accuracy, 79.17% economy routing, 100.00% premium routing for high-risk
-  samples and 31.67% modeled cost reduction versus a premium-only baseline.
-- Added 28 automated tests, 97% package branch coverage, CLI, versioned keyword
-  configuration, benchmark artifacts and GitHub Actions.
+- Built a multilingual agent workflow for Chinese, English and Korean support,
+  combining BM25+dense hybrid RAG, citation validation, domain tools and
+  risk-aware economy/premium model routing.
+- Designed deterministic PII, prompt-injection and human-approval guardrails so
+  legal, tax and high-value requests cannot be auto-executed or downgraded by an
+  LLM; added an optional OpenAI Agents SDK specialist-handoff path.
+- Created reproducible synthetic routing and RAG/safety evaluations, FastAPI and
+  CLI interfaces, Docker packaging, automated tests and GitHub Actions CI.
 
-The phrase **synthetic benchmark** must remain in the resume or project
-description. These metrics are not production K-Trade traffic.
+Keep the phrases **synthetic benchmark** and **controlled evaluation** near any
+metrics. They are not production-traffic claims.
 
 ## 90-second pitch
 
-"The business problem was that routine logistics and account questions do not
-need the same model tier as legal, tax or high-value disputes. I separated
-classification from policy: the classifier identifies intent and confidence,
-while hard rules make high amount, high risk and low confidence choose the
-premium route. Before routing, the system masks common PII. Because employer
-data cannot be published, I rebuilt the evaluation with 600 deterministic
-synthetic Chinese, English and Korean tickets. The benchmark is intentionally
-reproducible: 79.17% reached the economy route, all expected high-risk samples
-remained on premium, and the fixed price model produced 31.67% savings. It is a
-portfolio MVP, and production still needs real authorized replay, provider
-adapters, tenant auth, rate limits and observability."
-
+"I wanted this to be an agent system rather than a chat wrapper. A request is
+first validated and stripped of common PII, then deterministic code checks
+prompt injection, classifies intent and applies a risk-first model route. The
+agent retrieves multilingual policy through hybrid BM25 and dense search,
+selects an allow-listed domain tool and returns only citations from the actual
+retrieval set. Legal, tax and high-value cases cannot execute a business action;
+they create a human-review decision instead. The default workflow is fully
+offline, so every reviewer can run it and the CI does not depend on a paid API.
+For a live demonstration I added OpenAI Agents SDK handoffs, but the model only
+sees a masked, immutable policy envelope. I evaluate routing, retrieval recall,
+citation validity and safety separately so failures are diagnosable."

@@ -1,0 +1,7 @@
+services:
+  support-agent:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      OPENAI_AGENTS_DISABLE_TRACING: "1"
